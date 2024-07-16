@@ -10,6 +10,6 @@ controllers:
 # path: /list  <- chemin de l'url*
 # controller: (mettre chemin) *
 
-home-list:
-  path: /article
-  controller: App\Controller\ArticleController ::index
+# home-list:
+#   path: /article
+#   controller: App\Controller\ArticleController ::index

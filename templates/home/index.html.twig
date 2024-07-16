@@ -1,4 +1,7 @@
 {% extends "base.html.twig" %}
+{% block stylesheets %}
+<link rel="stylesheet" href={{asset('css/style.css')}}>
+{% endblock %}
 
 {% block title %}Page d'acceuil
 {% endblock %}
@@ -6,16 +9,20 @@
 {% block body %}
 
 	<main>
+		<a href="{{path('home_index')}}">Acceuil</a>
+		<a href="{{path('home_hello',{name: 'knz'})}}">Hello</a>
+		<a href="{{path('home_annee',{ans:23})}}">Année</a>
+		<a href="{{path('home_template',{id:'ckdhf'})}}">Template</a>
+		<a href={{path('article_index')}}>Acceuil Index</a>
 		<h1>Ma page d'accueil</h1>
 		<h2>{{name}}</h2>
 		<p>{{idi}}</p>
 		<ul>
-		{% for animal in animals %}
-			<li>{{animal}}</li>
-		{% endfor %}
+			{% for animal in animals %}
+				<li>{{animal}}</li>
+			{% endfor %}
 		</ul>
 	</main>
 
 
 {% endblock %}
-

@@ -12,7 +12,7 @@ class ArticleController extends AbstractController
     public function index(): Response
     {
         // return new Response('Essaie');
-        return $this->render('article/article.html.twig');
+        return $this->render('article/index.html.twig');
     }
 }
 

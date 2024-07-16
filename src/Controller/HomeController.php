@@ -26,21 +26,21 @@ class HomeController extends AbstractController
         return new Response('Bonjour ' . $request->get('name'));
     }
     // Je veux une nvl route qui affiche bonjouur, j'ai XX (vient de l'url) ans
-    #[Route('/ang/{ans}', name: 'home_annee', requirements: ['age' => Requirement::DIGITS])]
+    #[Route('/ang/{ans}', name: 'home_annee', requirements: ['ans' => Requirement::DIGITS])]
     // Autre méthode
     public function annee($ans)
     {
         return new Response("Bonjour j'ai " . $ans . " ans");
     }
-    // Créer une route /template vouloir un paramettre dynamique et l'affichez dans un paragraphe dans la vue 
+    // Créer une route /template vouloir un paramettre dynamique et l'affichez dans un paragraphe dans la vue
     #[Route('/template/{id}', name: 'home_template')]
     public function template($id): Response
     {
-        $animals=['lion','tigre','loup','aigle','chevre'];
+        $animals = ['lion', 'tigre', 'loup', 'aigle', 'chevre'];
         return $this->render('home/index.html.twig', [
-            'name'=>'kenzizi',
-            "idi"=>$id,
-            "animals"=>$animals,
+            'name' => 'kenzizi',
+            "idi" => $id,
+            "animals" => $animals,
         ]);
     }
 }
